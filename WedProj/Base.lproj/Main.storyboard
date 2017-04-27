@@ -20,6 +20,13 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TzZ-6k-n8Y">
+                                <rect key="frame" x="172" y="254" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="버튼"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="0.67196541219999995" green="0.88068373170000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Books" id="7eB-JY-oTZ">
@@ -64,7 +71,9 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.83792026180000001" blue="0.93143931420000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Pink" id="BUC-9i-V6k"/>
+                    <navigationItem key="navigationItem" title="Pink" id="BUC-9i-V6k">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="JkH-pL-k8X"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="pinkText" destination="9PY-W8-Z42" id="bOx-tk-nbL"/>
                         <segue destination="RPv-OX-0PS" kind="show" identifier="goPurple" id="Ezy-UL-rw5"/>
@@ -209,6 +218,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oX3-Td-kfD">
+                                <rect key="frame" x="154" y="306" width="69" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="백컬러 벼경"/>
+                                <connections>
+                                    <action selector="changeBackColor:" destination="RPv-OX-0PS" eventType="touchUpInside" id="Zfd-IJ-R7R"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FyQ-Pa-G5j">
+                                <rect key="frame" x="165" y="392" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="delegateChangeBackColor:" destination="RPv-OX-0PS" eventType="touchUpInside" id="MnP-h4-h4F"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.85556104359999996" green="0.72480100920000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>

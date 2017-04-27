@@ -10,11 +10,20 @@ import UIKit
 
 class YellowViewController: UIViewController {
 
+  
+    var myFunc:((UIColor) -> ())? = nil
     
     @IBOutlet var uiText: UITextField!
     
     
     @IBAction func done(_ sender: Any) {
+
+        
+        if let afunc = myFunc{
+            afunc(UIColor.cyan)
+        }
+    
+        
         if let myDelegate = delegate, let myStr = uiText.text {
             myDelegate.sendText(newText: myStr)
             self.navigationController?.popViewController(animated: true)
@@ -27,9 +36,17 @@ class YellowViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        NotificationCenter.default.addObserver(self, selector: #selector(changeColor(notification:)), name: NSNotification.Name.init(rawValue: "CHANGE_COLOR"), object: nil)
+        
         // Do any additional setup after loading the view.
     }
 
+    func changeColor(notification:NSNotification){
+        self.view.backgroundColor = UIColor.cyan
+    }
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
